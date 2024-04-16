@@ -17,7 +17,7 @@ export default function City(props) {
 
   if (props.city === "London") {
     return (
-      <p>
+      <p class="city">
         The temperature in {props.city} is {temperature}°C else
       </p>
     );

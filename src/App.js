@@ -6,7 +6,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Hello All...</h1>
-        <City city="Sydney" />
+        <City city="London" />
       </header>
     </div>
   );
