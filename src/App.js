@@ -1,12 +1,11 @@
 import "./App.css";
-import City from "./City";
+import Forecast from "./Forecast";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Hello All...</h1>
-        <City city="London" />
+        <Forecast />
       </header>
     </div>
   );
