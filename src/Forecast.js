@@ -1,49 +1,36 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
-import axios from "axios";
-import City from "./City";
 
-const API_KEY = "b2a5adcct04b33178913oc335f405433";
+function formatDay(time) {
+  let newDate = new Date(time * 1000);
+  let weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return weekdays[newDate.getDay()];
+}
 
-export default function Forecast() {
-  let [city, setCity] = useState("");
-  const [forecast, setForecast] = useState(null);
-
-  const getForecast = async () => {
-    const url = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${API_KEY}&units=metric`;
-    const response = await axios.get(url);
-    setForecast(response.data);
-  };
-
-  function handleSubmit(event) {
-    console.log("test2");
-    event.preventDefault();
-    getForecast();
-  }
-
-  function updateCity(event) {
-    console.log("test1");
-    setCity(event.target.value);
-  }
-
-  console.log("test");
+export default function Forecast(props) {
+  const { response } = props;
   return (
-    <div className="container">
-      <header>
-        <h1>Weather App</h1>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="search"
-            placeholder="Enter a city.."
-            required
-            className="search-input"
-            id="search-input"
-            onChange={updateCity}
-          />
-          <input type="submit" value="Search" className="search-button" />
-        </form>
-      </header>
-      <City forecast={forecast} />;
+    <div className="forecast">
+      {response.map(function (day) {
+        return (
+          <div className="day">
+            <div className="week">{formatDay(day.time)}</div>
+            <img
+              className="forecast-icon"
+              src={day.condition.icon_url}
+              alt=""
+            />
+            <div className="weather-forecast-temperatures">
+              <span className="high-temp text-dark-green">
+                {Math.round(day.temperature.maximum)}°{" "}
+              </span>
+              <span className="low-temp text-light-green">
+                {Math.round(day.temperature.minimum)}°
+              </span>
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }

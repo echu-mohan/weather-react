@@ -1,11 +1,11 @@
 import "./App.css";
-import Forecast from "./Forecast";
+import Weather from "./Weather";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Forecast />
+        <Weather />
       </header>
     </div>
   );

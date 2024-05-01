@@ -9,7 +9,13 @@
 .city {
   color: #61dafb;
 }
+.current-city {
+  margin-top: 30px;
+}
 
+.humidity-wind strong {
+  color: #f65282;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -37,6 +43,88 @@
   padding: 30px;
   box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
   border-radius: 10px;
+}
+.text-large {
+  font-family: "Montserrat", sans-serif;
+  font-size: 50px;
+  line-height: 47px;
+}
+.common-margin {
+  margin-top: 30px;
+}
+.forecast-icon {
+  width: 78px;
+  height: 78px;
+  display: block;
+  margin: 0 auto;
+}
+.align-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.space-between {
+  justify-content: space-between;
+}
+.day-and-time {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+.city-weather {
+  text-align: center;
+  min-height: 340px;
+}
+.temp-large {
+  font-weight: 600;
+  color: #59888b;
+  padding: 10px 10px;
+  text-align: center;
+}
+.text-grey {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-style: italic;
+}
+
+.text-green {
+  color: #1d6267;
+}
+.day {
+  background-color: #d2dfdf;
+  border: 0.01rem solid #007afe;
+  border-radius: 5px;
+  text-align: center;
+  padding: 8px 0px;
+}
+.week {
+  font-size: 20px;
+}
+.forecast {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.smiley {
+  min-height: 104px;
+}
+.search-input {
+  padding-left: 10px;
+  background-color: #f7f7fa;
+  border: 0.01rem solid;
+  border-radius: 5px;
+  width: 360px;
+  height: 30px;
+}
+.search-button {
+  margin-left: 20px;
+  width: 100px;
+  border: 0.01rem;
+  border-radius: 5px;
+  background-color: #007afe;
+  color: white;
+  font-family: sans-serif;
+  height: 30px;
 }
 
 @keyframes App-logo-spin {
